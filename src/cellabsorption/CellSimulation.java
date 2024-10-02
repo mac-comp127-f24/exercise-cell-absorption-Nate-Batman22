@@ -22,7 +22,6 @@ public class CellSimulation {
         canvas = new CanvasWindow("Cell Absorption", 800, 800);
         populateCells();
         
-
         //noinspection InfiniteLoopStatement
         while (true) {
             Point canvasCenter = new Point(canvas.getWidth() / 2.0, canvas.getHeight() / 2.0);
@@ -35,7 +34,7 @@ public class CellSimulation {
 
     private void populateCells() {
         double size = rand.nextInt(5) + 2;
-        
+        cell = new Cell(
             rand.nextDouble() * (canvas.getWidth() - size),
             rand.nextDouble() * (canvas.getWidth() - size),
             size,
