@@ -30,7 +30,7 @@ public class CellSimulation {
             for (int i = 0; i < cells.size(); i++){
                Cell cell = cells.get(i);
                 cell.moveAround(canvasCenter);
-                cell.grow(0.02);
+                handleCellInteraction();
             }
                 canvas.draw();
                 canvas.pause(10);
@@ -50,6 +50,26 @@ public class CellSimulation {
                 canvas.add(cell.getShape());
             cells.add(cell);
         }
+    }
+
+    /*
+     * takes a cell and runs it against all 
+     * other existing cells and runs the interact with method.
+     */
+    private void handleCellInteraction() {
+        for (int i = 0; i < this.cells.size(); i++){
+            Cell cell1 = this.cells.get(i);
+            for (int j = i + 1; j < this.cells.size(); j++){
+                Cell cell2 = this.cells.get(j);
+                cell2.interactWith(cell1);
+            }
+
+        }
+        // for i from 0 up to max cell index
+            // get cell at index i
+            // for j from i+1 up to max cell index
+                // get cell at index j
+                // make the two cells interact
     }
     
 }
