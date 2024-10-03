@@ -6,6 +6,13 @@ import edu.macalester.graphics.Point;
 import java.awt.Color;
 import java.util.Random;
 
+/*
+ * Nathan is the author
+ * this class creates a individual cell object, 
+ * and allows itself to be called by Cellsimulation
+ * acknowledgement of Preceptor Rachel Xu and Comp 127 section 1
+ */
+
 public class Cell {
 
     private static final double
@@ -24,12 +31,6 @@ public class Cell {
         this.direction = normalizeRadians(Math.random() * Math.PI * 2);
     }
 
-    // private void createCell(double x, double y, double radius, Color color) {
-    //     this.shape = new Ellipse(x, y, radius * 2, radius * 2);
-    //     shape.setFillColor(color);
-    //     this.radius = radius;
-    //     direction = normalizeRadians(Math.random() * Math.PI * 2);
-    // }
     public Ellipse getShape(){
         return shape;
     }
@@ -43,11 +44,6 @@ public class Cell {
         shape.setSize(new Point(newRadius * 2, newRadius * 2));
         shape.setCenter(previousCenter);
     }
-
-
-    // public void grow(double amount) {
-    //     setRadius(radius + amount);
-    // }
 
     private static double normalizeRadians(double theta) {
         double pi2 = Math.PI * 2;

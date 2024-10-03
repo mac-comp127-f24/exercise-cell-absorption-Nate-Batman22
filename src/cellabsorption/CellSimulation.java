@@ -23,8 +23,6 @@ public class CellSimulation {
     public CellSimulation() {
         canvas = new CanvasWindow("Cell Absorption", 800, 800);
         populateCells();
-        
-        //noinspection InfiniteLoopStatement
         while (true) {
             Point canvasCenter = new Point(canvas.getWidth() / 2.0, canvas.getHeight() / 2.0);
             for (int i = 0; i < cells.size(); i++){
@@ -34,7 +32,6 @@ public class CellSimulation {
             }
                 canvas.draw();
                 canvas.pause(10);
-            
         }
     }
 
@@ -63,15 +60,8 @@ public class CellSimulation {
                 Cell cell2 = this.cells.get(j);
                 cell2.interactWith(cell1);
             }
-
         }
-        // for i from 0 up to max cell index
-            // get cell at index i
-            // for j from i+1 up to max cell index
-                // get cell at index j
-                // make the two cells interact
     }
-    
 }
 
 
